@@ -19,7 +19,7 @@ Update your combine reducers file as below
     export default rootReducer;
 
 **STEP 3: [Optional]**
-Set local state to temporarily store the validation messages
+ Set local state to temporarily store the validation messages
 
     import { setValidity } from 'v-react';
 
@@ -40,7 +40,7 @@ This is how you invoke the 'v-react' package to update the validations in your r
 Below code should go in input on change event or button click even, etc where ever you need the validation checks to be triggered.
 
     const params = {
-      group: 'string', // Group a set of validtions with a unique name.
+      group: 'string', // Group a set of validations with a unique name.
       name: 'string', // Unique name for the validation. This should be different for each of the field.
       value: 'string/bool/number/null/undefined', // Value to be validated.
       validations: 'array', // List of validations in the below specified format.
@@ -49,7 +49,7 @@ Below code should go in input on change event or button click even, etc where ev
       state: '_.cloneDeep(this.state)' // Local state, only if you have followed the STEP 3
     };
 
-    setValidity(params);
+    validators.setValidity(params);
     this.setState({ ...params.state });
 
 ***Format for validations:***
@@ -76,3 +76,15 @@ Below code should go in input on change event or button click even, etc where ev
             ]
           }
 
+The result of setValidity function will be in below format
+
+    [{
+	    ['fieldName']: {
+				isDirty: true,
+				hasError: 'bool',
+				errors: ['errormessage1', 'errormessage2'],
+				errorMessage: 'All error messages combined in a single string',
+				validationState: '"VALIDATION_NEUTRAL" or "VALIDATION_ERROR"',
+				ignored: 'bool'
+			   }
+    }]
