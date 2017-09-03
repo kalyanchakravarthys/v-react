@@ -19,7 +19,7 @@ Update your combine reducers file as below
     export default rootReducer;
 
 **STEP 3: [Optional]**
-Use v-react as below in your component
+Set local state to temporarily store the validation messages
 
     import { setValidity } from 'v-react';
 
@@ -49,7 +49,7 @@ Below code should go in input on change event or button click even, etc where ev
       state: '_.cloneDeep(this.state)' // Local state, only if you have followed the STEP 3
     };
 
-    validators.setValidity(params);
+    setValidity(params);
     this.setState({ ...params.state });
 
 ***Format for validations:***
