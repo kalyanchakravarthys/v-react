@@ -38,7 +38,13 @@ const checkValidity = ({value, isRequired, minLength, maxLength, custom, isDirty
 }
 
 const setValidity = ({group, name, value, validations, isDirty, fieldName, setError, state}) => {
-    const result = checkValidity({ value, ...validations, isDirty });
+    const result = checkValidity({  value, 
+                                    isRequired: validations.isRequired, 
+                                    minLength: validations.minLength, 
+                                    maxLength: validations.maxLength, 
+                                    custom:validations.custom, 
+                                    isDirty 
+                                 }); 
     if(!state) {
         state = [];
         state[fieldName] = { ignored: false }
@@ -59,8 +65,6 @@ const setValidity = ({group, name, value, validations, isDirty, fieldName, setEr
                 name,
                 type: fieldName,
                 hasError: !!result.errorMessage });
-        } else {
-            errorReducer()
         }
     }
     return state;
