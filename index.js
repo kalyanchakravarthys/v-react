@@ -1,5 +1,5 @@
 'use strict';
-import {checkValidity, setValidity, errorReducer, getErrors} from './build/main.bundle.js'
+import {checkValidity, setValidity, errorReducer, getErrors, errorActions } from './build/main.bundle.js'
 
 const validatorConfig = []
 
@@ -8,5 +8,6 @@ export {
     checkValidity,
     setValidity,
     validatorConfig,
-    errorReducer
+    errorReducer,
+    errorActions
  }

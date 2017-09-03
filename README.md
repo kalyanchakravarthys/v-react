@@ -9,7 +9,7 @@ This package will help you to update the validation error messages in redux stor
 **STEP 2:**
 Update your combine reducers file as below
 
-    import errorReducer from './errorReducer';
+    import { errorReducer } from './errorReducer';
 
     const rootReducer = combineReducers({
       errorReducer,
@@ -17,6 +17,18 @@ Update your combine reducers file as below
     });
     
     export default rootReducer;
+
+**STEP 3:**
+Pass the v-react error action to your component
+
+import { errorActions } from './errorReducer';
+
+function mapDispatchToProps(dispatch) {
+  return {
+      ErrorActions: bindActionCreators(errorAction, dispatch),
+      // Other actions go here 
+  };
+}
 
 **STEP 3: [Optional]**
  Set local state to temporarily store the validation messages
@@ -46,7 +58,8 @@ Below code should go in input on change event or button click even, etc where ev
       validations: 'array', // List of validations in the below specified format.
       isDirty: 'bool', // Only if you set this value to true, validations check will be performed.
       fieldName: 'string', // Name of the field to be validated
-      state: '_.cloneDeep(this.state)' // Local state, only if you have followed the STEP 3
+      state: '_.cloneDeep(this.state)', // Local state, only if you have followed the STEP 3,
+      setErrors: errorActions.setError // Fetch the set error function from 'v-react' and pass it on the set validity function
     };
 
     validators.setValidity(params);

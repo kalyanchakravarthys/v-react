@@ -1,6 +1,6 @@
 {
   "name": "v-react",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Validations for React JS components",
   "main": "index.js",
   "scripts": {
