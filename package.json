@@ -1,10 +1,9 @@
 {
   "name": "v-react",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Validations for React JS components",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kalyanchakravarthys/v-react.git"
