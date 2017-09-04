@@ -3,6 +3,8 @@ This validation package can be used with **react** and **redux**.
 
 This package will help you to update the validation error messages in redux store and you can use the validations in store to allow/reject actions in UI.
 
+**Example Project:** https://github.com/kalyanchakravarthys/v-react-example
+
 **STEP 1:** npm install v-react
 
 
