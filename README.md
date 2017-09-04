@@ -63,7 +63,7 @@ Maintain a local state in your component for all your input fields which need va
     validators.setValidity(params); //##Ref2
     this.setState({ ...params.state });
 
-**STEP 6:** This is how your html goes
+**STEP 6:** This is how your html goes in render function
 
     const validationMessageStyle = {
         color: 'red'
@@ -78,7 +78,8 @@ Maintain a local state in your component for all your input fields which need va
 	    onChange={this.onNameChange}
 	    className="form-control"
 	    value={this.props.firstName}/>
-        <span style={validationMessageStyle}>{this.state['input-field-name'].errorMessage}</span>
+	    
+    <span style={validationMessageStyle}>{this.state['input-field-name'].errorMessage}</span>
 
 ***`##Ref1`* Format for validations:**
 
