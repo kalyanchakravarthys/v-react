@@ -5,7 +5,7 @@ This package will help you to update the validation error messages in redux stor
 
 **Example Project:** https://github.com/kalyanchakravarthys/v-react-example
 
-**STEP 1:** npm install v-react
+**STEP 1:** npm install v-react --save
 
 
 **STEP 2:** Update your combine reducers file as below
@@ -64,14 +64,21 @@ Maintain a local state in your component for all your input fields which need va
     this.setState({ ...params.state });
 
 **STEP 6:** This is how your html goes
+
     const validationMessageStyle = {
         color: 'red'
     },
     validationInputStyle = {
         'border-color': 'red'
     }
-    <input	name="firstName" style={this.state.userName.hasError ? validationInputStyle : {} }	type="text"		onChange={this.onNameChange}	className="form-control"	value={this.props.firstName}/>
-    <span style={validationMessageStyle}>{this.state['input-field-name'].errorMessage}</span>
+
+    <input	name="firstName"
+	    style={this.state.userName.hasError ? validationInputStyle : {} }	
+	    type="text"
+	    onChange={this.onNameChange}
+	    className="form-control"
+	    value={this.props.firstName}/>
+        <span style={validationMessageStyle}>{this.state['input-field-name'].errorMessage}</span>
 
 ***`##Ref1`* Format for validations:**
 
