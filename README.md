@@ -64,9 +64,14 @@ Maintain a local state in your component for all your input fields which need va
     this.setState({ ...params.state });
 
 **STEP 6:** This is how your html goes
-
-    <input	name="firstName"	type="text"		onChange={this.onNameChange}	className="form-control"	value={this.props.firstName}/>
-    <span style="color:red;">{this.state.drugName.errorMessage}</span>
+    const validationMessageStyle = {
+        color: 'red'
+    },
+    validationInputStyle = {
+        'border-color': 'red'
+    }
+    <input	name="firstName" style={this.state.userName.hasError ? validationInputStyle : {} }	type="text"		onChange={this.onNameChange}	className="form-control"	value={this.props.firstName}/>
+    <span style={validationMessageStyle}>{this.state['input-field-name'].errorMessage}</span>
 
 ***`##Ref1`* Format for validations:**
 
