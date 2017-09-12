@@ -28,7 +28,7 @@ const checkValidity = ({value, isRequired, minLength, maxLength, custom, isDirty
         if(custom && custom.length) {
             custom.forEach(c => {
                 if(c.action(value)) {
-                    errors.push(e.message)
+                    errors.push(c.message)
                 }
             })
         }
