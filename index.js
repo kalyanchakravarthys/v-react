@@ -53,7 +53,7 @@ var checkValidity = exports.checkValidity = function checkValidity(_ref) {
         if (custom && custom.length) {
             custom.forEach(function (c) {
                 if (c.action(value)) {
-                    errors.push(e.message);
+                    errors.push(c.message);
                 }
             });
         }
